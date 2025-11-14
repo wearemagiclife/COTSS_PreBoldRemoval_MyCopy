@@ -7,23 +7,23 @@
         "key": "Legal",
         "location": {
           "startingColumn": 26,
-          "startingLine": 20
+          "startingLine": 60
         }
       },
       {
         "comment": "",
-        "key": "Legal",
+        "key": "We believe in your right to Data Autonomy.",
         "location": {
-          "startingColumn": 22,
-          "startingLine": 9
+          "startingColumn": 26,
+          "startingLine": 13
         }
       },
       {
         "comment": "",
-        "key": "Opens %@ in your browser",
+        "key": "Out of respect, we designed this app to never receive any of your personally identifying information, or to profit from it. We receive anonymous logs for diagnostics. We tried to make these as human friendly as possible, and are available to answer any questions you may have at support@wearemagic.life.",
         "location": {
-          "startingColumn": 28,
-          "startingLine": 45
+          "startingColumn": 26,
+          "startingLine": 18
         }
       }
     ]

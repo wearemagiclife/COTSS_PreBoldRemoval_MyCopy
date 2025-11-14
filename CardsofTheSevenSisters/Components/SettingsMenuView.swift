@@ -3,8 +3,10 @@ import SwiftUI
 struct SettingsMenuView: View {
     @Environment(\.dismiss) private var dismiss
     
+    @StateObject private var authManager = AuthenticationManager.shared
+    
     // Reuse the same parchment tone you use elsewhere
-    private let cardBackground = Color(red: 0.86, green: 0.77, blue: 0.57)
+    private let cardBackground = Color(red: 0.95, green: 0.91, blue: 0.82)
     
     var body: some View {
         NavigationStack {
@@ -29,9 +31,20 @@ struct SettingsMenuView: View {
                                 SettingsRow(
                                     systemImage: "person.crop.circle",
                                     title: "Profile",
-                                    subtitle: "Name, birth date & sign-in",
+                                    subtitle: "Need to change your details?",
                                     cardBackground: cardBackground
                                 )
+                            }
+                        
+                            NavigationLink {
+                                   LearnView()
+                            } label: {
+                                   SettingsRow(
+                                       systemImage: "book.fill",
+                                       title: "Learn",
+                                       subtitle: "Tips & Tutorials",
+                                       cardBackground: cardBackground
+                                   )
                             }
                             
                             NavigationLink {
@@ -40,7 +53,7 @@ struct SettingsMenuView: View {
                                 SettingsRow(
                                     systemImage: "bell.badge",
                                     title: "Notifications",
-                                    subtitle: "Daily card reminders",
+                                    subtitle: "Never miss your Daily Card",
                                     cardBackground: cardBackground
                                 )
                             }
@@ -50,8 +63,8 @@ struct SettingsMenuView: View {
                             } label: {
                                 SettingsRow(
                                     systemImage: "doc.text.magnifyingglass",
-                                    title: "Legal & Policies",
-                                    subtitle: "Privacy & Terms",
+                                    title: "Legal",
+                                    subtitle: "Privacy, Terms, & Data Deletion",
                                     cardBackground: cardBackground
                                 )
                             }
@@ -61,8 +74,21 @@ struct SettingsMenuView: View {
                             } label: {
                                 SettingsRow(
                                     systemImage: "globe",
-                                    title: "Visit Website",
-                                    subtitle: "www.sevensisters.cards",
+                                    title: "Need Support?",
+                                    subtitle: "www.sevensisters.cards/support",
+                                    cardBackground: cardBackground
+                                )
+                            }
+                            
+                            // SIGN OUT BUTTON
+                            Button {
+                                authManager.signOut()
+                                dismiss()
+                            } label: {
+                                SettingsRow(
+                                    systemImage: "rectangle.portrait.and.arrow.right",
+                                    title: "Sign Out",
+                                    subtitle: "Sign out of your account",
                                     cardBackground: cardBackground
                                 )
                             }
@@ -97,7 +123,7 @@ struct SettingsMenuView: View {
     }
     
     private func openWebsite() {
-        if let url = URL(string: "https://sevensisters.cards") {
+        if let url = URL(string: "https://wearemagic.life") {
             UIApplication.shared.open(url)
         }
     }

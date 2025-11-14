@@ -7,47 +7,71 @@
         "key": "Notifications",
         "location": {
           "startingColumn": 26,
-          "startingLine": 39
+          "startingLine": 76
         }
       },
       {
         "comment": "",
         "key": "Reminders",
         "location": {
-          "startingColumn": 34,
-          "startingLine": 17
+          "startingColumn": 26,
+          "startingLine": 16
+        }
+      },
+      {
+        "comment": "",
+        "key": "Set a gentle reminder to check your Daily Card at noon each day.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 22
         }
       },
       {
         "comment": "",
         "key": "Daily Card Reminder",
         "location": {
-          "startingColumn": 37,
-          "startingLine": 33
+          "startingColumn": 30,
+          "startingLine": 30
+        }
+      },
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 59
+        }
+      },
+      {
+        "comment": "",
+        "key": "Daily Card Reminder",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 62
         }
       },
       {
         "comment": "",
         "key": "Toggle daily notification at 12:00 PM",
         "location": {
-          "startingColumn": 36,
-          "startingLine": 34
+          "startingColumn": 60,
+          "startingLine": 63
         }
       },
       {
         "comment": "",
-        "key": "Daily Card Reminder",
+        "key": "12:00 PM Daily",
         "location": {
-          "startingColumn": 30,
-          "startingLine": 23
+          "startingColumn": 46,
+          "startingLine": 47
         }
       },
       {
         "comment": "",
-        "key": "Receive a Daily Card notification at 12:00 PM each day",
+        "key": "You’ll get a reminder to open your Daily Card at this time.",
         "location": {
-          "startingColumn": 30,
-          "startingLine": 27
+          "startingColumn": 46,
+          "startingLine": 51
         }
       }
     ]
