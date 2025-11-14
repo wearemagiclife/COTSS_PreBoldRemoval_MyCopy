@@ -1,0 +1,288 @@
+{
+  "source": "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Services/ShareCardContent.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%@ Reading",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "by Cards of The Seven Sisters",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 67
+        }
+      },
+      {
+        "comment": "",
+        "key": "Find out what The Cards hold for you with a free personalized reading.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 134
+        }
+      },
+      {
+        "comment": "",
+        "key": "sevensisters.cards",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 140
+        }
+      },
+      {
+        "comment": "",
+        "key": "Astral Cycle Reading",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 173
+        }
+      },
+      {
+        "comment": "",
+        "key": "by Cards of The Seven Sisters",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 178
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cycle Card",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 214
+        }
+      },
+      {
+        "comment": "",
+        "key": "Planetary Phase",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 234
+        }
+      },
+      {
+        "comment": "",
+        "key": "Find out what The Cards hold for you with a free personalized reading.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 286
+        }
+      },
+      {
+        "comment": "",
+        "key": "sevensisters.cards",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 292
+        }
+      },
+      {
+        "comment": "",
+        "key": "Find yours at sevensisters.cards",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 345
+        }
+      },
+      {
+        "comment": "",
+        "key": "KARMA CARD",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 419
+        }
+      },
+      {
+        "comment": "",
+        "key": "Get your free personalized reading",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 449
+        }
+      },
+      {
+        "comment": "",
+        "key": "sevensisters.cards",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 455
+        }
+      },
+      {
+        "comment": "",
+        "key": "Daily Card Reading",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 519
+        }
+      },
+      {
+        "comment": "",
+        "key": "by Cards of The Seven Sisters",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 524
+        }
+      },
+      {
+        "comment": "",
+        "key": "Daily Card",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 560
+        }
+      },
+      {
+        "comment": "",
+        "key": "Planetary Card",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 580
+        }
+      },
+      {
+        "comment": "",
+        "key": "Find out what The Cards hold for you with a free personalized reading.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 632
+        }
+      },
+      {
+        "comment": "",
+        "key": "sevensisters.cards",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 638
+        }
+      },
+      {
+        "comment": "",
+        "key": "Share",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 943
+        }
+      },
+      {
+        "comment": "",
+        "key": "Share Error",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 950
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 951
+        }
+      },
+      {
+        "comment": "",
+        "key": "Share",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 1078
+        }
+      },
+      {
+        "comment": "",
+        "key": "Share Error",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 1085
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 1086
+        }
+      },
+      {
+        "comment": "",
+        "key": "Share",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 1219
+        }
+      },
+      {
+        "comment": "",
+        "key": "Share Error",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 1226
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 1227
+        }
+      },
+      {
+        "comment": "",
+        "key": "Share",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 1351
+        }
+      },
+      {
+        "comment": "",
+        "key": "Share Error",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 1358
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 1359
+        }
+      },
+      {
+        "comment": "",
+        "key": "Share",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 1483
+        }
+      },
+      {
+        "comment": "",
+        "key": "Share Error",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 1484
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 1485
+        }
+      }
+    ]
+  },
+  "version": 1
+}

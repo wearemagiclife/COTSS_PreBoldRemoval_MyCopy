@@ -8,22 +8,28 @@ struct FiftyTwoDayCycleView: View {
     @State private var selectedCardType: CardType? = nil
     @State private var selectedContentType: DetailContentType? = nil
 
-    private var shareContent: ShareCardContent {
-        if let selectedCard = selectedCard, let selectedCardType = selectedCardType {
-            return ShareCardContent.fromModal(
-                card: selectedCard,
-                cardType: selectedCardType,
-                contentType: selectedContentType,
-                date: Date()
-            )
-        } else {
-            return ShareCardContent.fromModal(
-                card: viewModel.currentPeriodCard,
-                cardType: CardType.fiftyTwoDay,
-                contentType: nil,
-                date: Date()
-            )
+    private var cycleCardTitle: String {
+        if let def = getCardDefinition(by: viewModel.currentPeriodCard.id) {
+            return def.name
         }
+        return viewModel.currentPeriodCard.name
+    }
+
+    private var cycleCardDescription: String {
+        let repo = DescriptionRepository.shared
+        return repo.fiftyTwoDescriptions[String(viewModel.currentPeriodCard.id)] ?? "No description available."
+    }
+
+    private var planetInfo: (title: String, description: String) {
+        let info = AppConstants.PlanetDescriptions.getDescription(for: currentPlanetaryPhase)
+        return (info.title, info.description)
+    }
+
+    private var cycleInfoText: String {
+        guard let currentDates = currentCycleDates else {
+            return "\(currentPlanetaryPhase) Phase"
+        }
+        return "\(currentPlanetaryPhase) Phase - \(DataManager.shared.formatDateRange(start: currentDates.start, end: currentDates.end))"
     }
     
     // Helper computed properties to get date ranges
@@ -89,8 +95,16 @@ struct FiftyTwoDayCycleView: View {
             trailingContent: {
                 AnyView(
                     HStack(spacing: 12) {
-                        ShareCardShareLink(content: shareContent, size: .portrait1080x1350)
-                        
+                        AstralCycleShareLink(
+                            cycleCard: viewModel.currentPeriodCard,
+                            cycleCardTitle: cycleCardTitle,
+                            cycleCardDescription: cycleCardDescription,
+                            planetName: currentPlanetaryPhase,
+                            planetTitle: planetInfo.title,
+                            planetDescription: planetInfo.description,
+                            cycleInfo: cycleInfoText
+                        )
+
                         if DataManager.shared.explorationDate != nil {
                             Button(AppConstants.Strings.reset) {
                                 DataManager.shared.explorationDate = nil

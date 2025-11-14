@@ -52,6 +52,8 @@ struct VintageSplashView: View {
                     .frame(maxWidth: titleWidth)
                     .opacity(showButton ? 1 : 0)
                     .animation(.easeInOut(duration: 1.2).delay(1.5), value: showButton)
+                    .accessibilityLabel("Cards of The Seven Sisters")
+                    .accessibilityAddTraits(.isHeader)
             } else {
                 VStack(spacing: 4) {
                     Text("CARDS OF THE")
@@ -76,7 +78,7 @@ struct VintageSplashView: View {
     }
     
     private func cardAnimationArea(for size: CGSize) -> some View {
-        let ellipseWidth = min(size.width * 0.8, 320) // 80% of screen width, max 320
+        let ellipseWidth = min(size.width * 0.75, 320) // 80% of screen width, max 320
         let ellipseHeight = ellipseWidth * 0.75 // Maintain aspect ratio
         let scaleFactor = size.width / 390 // iPhone 14 Pro width as base
         
@@ -86,6 +88,7 @@ struct VintageSplashView: View {
                 .frame(width: ellipseWidth, height: ellipseHeight)
                 .scaleEffect(showCards ? 1.0 : 0.3)
                 .animation(.easeOut(duration: 0.8).delay(0.5), value: showCards)
+                .accessibilityHidden(true)
             
             ForEach(0..<cardNames.count, id: \.self) { index in
                 if index != 3 {
@@ -107,6 +110,7 @@ struct VintageSplashView: View {
                         .delay(Double(index) * 0.1 + 1.0),
                         value: cardOffsets[index]
                     )
+                    .accessibilityHidden(true)
                 }
             }
             
@@ -122,6 +126,7 @@ struct VintageSplashView: View {
                 .spring(response: 0.8, dampingFraction: 0.6),
                 value: cardScales[3]
             )
+            .accessibilityHidden(true)
         }
         .frame(height: ellipseHeight + 50)
     }

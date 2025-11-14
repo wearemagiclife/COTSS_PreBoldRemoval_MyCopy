@@ -1,0 +1,48 @@
+{
+  "source": "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Components/CardDetailModalView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Close card details",
+        "location": {
+          "startingColumn": 37,
+          "startingLine": 31
+        }
+      },
+      {
+        "comment": "",
+        "key": "Double tap to close",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 33
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ planetary influence",
+        "location": {
+          "startingColumn": 57,
+          "startingLine": 46
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ of %@",
+        "location": {
+          "startingColumn": 57,
+          "startingLine": 57
+        }
+      },
+      {
+        "comment": "",
+        "key": "Missing: %@",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 87
+        }
+      }
+    ]
+  },
+  "version": 1
+}

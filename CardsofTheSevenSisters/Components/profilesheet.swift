@@ -4,6 +4,7 @@ import AuthenticationServices
 struct ProfileSheet: View {
     @StateObject private var dataManager = DataManager.shared
     @StateObject private var authManager = AuthenticationManager.shared
+    @StateObject private var notificationManager = NotificationManager.shared
     @Environment(\.presentationMode) var presentationMode
     @State private var name: String = ""
     @State private var birthDate = Date()
@@ -46,30 +47,36 @@ struct ProfileSheet: View {
                 ScrollView {
                     VStack(spacing: 30) {
                         // Apple ID Info Section (if signed in)
-                        if authManager.isSignedIn && (!authManager.userEmail.isEmpty || !authManager.userName.isEmpty) {
+                        if authManager.isSignedIn && (authManager.email != nil || authManager.displayName != "User") {
                             VStack(alignment: .leading, spacing: 15) {
                                 Text("Apple ID")
                                     .font(.custom("Iowan Old Style", size: 22))
                                     .foregroundColor(AppTheme.primaryText)
                                 
                                 VStack(alignment: .leading, spacing: 10) {
-                                    if !authManager.userName.isEmpty {
+                                    if authManager.displayName != "User" {
                                         HStack {
                                             Image(systemName: "person.fill")
                                                 .foregroundColor(AppTheme.secondaryText)
-                                            Text(authManager.userName)
+                                                .accessibilityHidden(true)
+                                            Text(authManager.displayName)
                                                 .font(.custom("Iowan Old Style", size: 16))
                                                 .foregroundColor(AppTheme.primaryText)
                                         }
+                                        .accessibilityElement(children: .combine)
+                                        .accessibilityLabel("Name: \(authManager.displayName)")
                                     }
-                                    if !authManager.userEmail.isEmpty {
+                                    if let email = authManager.email, !email.isEmpty {
                                         HStack {
                                             Image(systemName: "envelope.fill")
                                                 .foregroundColor(AppTheme.secondaryText)
-                                            Text(authManager.userEmail)
+                                                .accessibilityHidden(true)
+                                            Text(email)
                                                 .font(.custom("Iowan Old Style", size: 16))
                                                 .foregroundColor(AppTheme.primaryText)
                                         }
+                                        .accessibilityElement(children: .combine)
+                                        .accessibilityLabel("Email: \(email)")
                                     }
                                 }
                                 .padding()
@@ -164,55 +171,7 @@ struct ProfileSheet: View {
                         .accessibilityLabel("Save Changes")
                         .accessibilityHint("Saves profile information and closes the sheet")
                         .padding(.horizontal)
-                        .cardShadow(isLarge: true)
-                        
-                        VStack(alignment: .leading, spacing: 15) {
-                            Text("Legal")
-                                .font(.custom("Iowan Old Style", size: 22))
-                                .foregroundColor(AppTheme.primaryText)
-                            
-                            Button(action: {
-                                if let url = URL(string: "https://wearemagic.life/privacy-policy") {
-                                    UIApplication.shared.open(url)
-                                }
-                            }) {
-                                HStack {
-                                    Text("Privacy Policy")
-                                        .font(.custom("Iowan Old Style", size: 18))
-                                        .foregroundColor(AppTheme.primaryText)
-                                    Spacer()
-                                    Image(systemName: "arrow.up.right")
-                                        .foregroundColor(AppTheme.primaryText)
-                                }
-                                .padding()
-                                .background(fieldBackgroundColor)
-                                .cornerRadius(10)
-                            }
-                            .accessibilityLabel("Privacy Policy")
-                            .accessibilityHint("Opens privacy policy in web browser")
-                            
-                            Button(action: {
-                                if let url = URL(string: "https://wearemagic.life/terms-of-service") {
-                                    UIApplication.shared.open(url)
-                                }
-                            }) {
-                                HStack {
-                                    Text("Terms of Service")
-                                        .font(.custom("Iowan Old Style", size: 18))
-                                        .foregroundColor(AppTheme.primaryText)
-                                    Spacer()
-                                    Image(systemName: "arrow.up.right")
-                                        .foregroundColor(AppTheme.primaryText)
-                                }
-                                .padding()
-                                .background(fieldBackgroundColor)
-                                .cornerRadius(10)
-                            }
-                            .accessibilityLabel("Terms of Service")
-                            .accessibilityHint("Opens terms of service in web browser")
-                        }
-                        .padding(.horizontal)
-                        
+
                         // Sign Out Button
                         if authManager.isSignedIn {
                             Button {

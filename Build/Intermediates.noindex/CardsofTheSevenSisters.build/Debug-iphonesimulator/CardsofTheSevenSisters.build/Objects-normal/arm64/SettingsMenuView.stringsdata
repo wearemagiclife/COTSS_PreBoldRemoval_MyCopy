@@ -1,0 +1,16 @@
+{
+  "source": "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Components/SettingsMenuView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Settings",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 54
+        }
+      }
+    ]
+  },
+  "version": 1
+}

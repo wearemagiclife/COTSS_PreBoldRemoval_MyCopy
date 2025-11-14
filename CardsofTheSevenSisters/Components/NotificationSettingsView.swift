@@ -1,3 +1,11 @@
+//
+//  NotificationSettingsView.swift
+//  CardsofTheSevenSisters
+//
+//  Created by Angela Whitehead on 11/14/25.
+//
+
+
 import SwiftUI
 
 struct NotificationSettingsView: View {

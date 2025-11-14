@@ -21,57 +21,67 @@ extension CardViewModel {
 class DailyCardViewModel: CardViewModel {
     @Published var errorMessage: String = ""
     @Published var isLoading: Bool = false
-    
+    @Published var todayCard: DailyCardResult
+    @Published var yesterdayCard: DailyCardResult
+    @Published var tomorrowCard: DailyCardResult
+
     private let dataManager = DataManager.shared
     private let calculator = CardCalculationService()
-    
+
     private var userCalendar: Calendar {
         var calendar = Calendar.current
         calendar.timeZone = TimeZone.current
         return calendar
     }
-    
+
     var calculationDate: Date {
         let baseDate = dataManager.explorationDate ?? Date()
         return userCalendar.startOfDay(for: baseDate)
     }
-    
+
     var birthCard: Card {
         let components = userCalendar.dateComponents([.month, .day], from: dataManager.userProfile.birthDate)
         let cardId = BirthCardLookup.shared.calculateCardForDate(monthValue: components.month ?? 1, dayValue: components.day ?? 1)
         return dataManager.getCard(by: cardId)
     }
-    
-    var todayCard: DailyCardResult {
-        calculator.generateTimeInfluence(
-            userBirthDate: dataManager.userProfile.birthDate,
-            primaryCard: birthCard.id,
-            evaluationDate: calculationDate
+
+    init() {
+        // Calculate once during initialization
+        let birthCardId = {
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.month, .day], from: DataManager.shared.userProfile.birthDate)
+            return BirthCardLookup.shared.calculateCardForDate(monthValue: components.month ?? 1, dayValue: components.day ?? 1)
+        }()
+
+        let baseDate = DataManager.shared.explorationDate ?? Date()
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone.current
+        let today = calendar.startOfDay(for: baseDate)
+        let yesterday = calendar.date(byAdding: .day, value: -1, to: today) ?? today
+        let tomorrow = calendar.date(byAdding: .day, value: 1, to: today) ?? today
+
+        let calc = CardCalculationService()
+        let birthDate = DataManager.shared.userProfile.birthDate
+
+        self.todayCard = calc.generateTimeInfluence(
+            userBirthDate: birthDate,
+            primaryCard: birthCardId,
+            evaluationDate: today
         )
-    }
-    
-    var yesterdayCard: DailyCardResult {
-        let yesterday = getDateForDayOffset(-1)
-        return calculator.generateTimeInfluence(
-            userBirthDate: dataManager.userProfile.birthDate,
-            primaryCard: birthCard.id,
+
+        self.yesterdayCard = calc.generateTimeInfluence(
+            userBirthDate: birthDate,
+            primaryCard: birthCardId,
             evaluationDate: yesterday
         )
-    }
-    
-    var tomorrowCard: DailyCardResult {
-        let tomorrow = getDateForDayOffset(1)
-        return calculator.generateTimeInfluence(
-            userBirthDate: dataManager.userProfile.birthDate,
-            primaryCard: birthCard.id,
+
+        self.tomorrowCard = calc.generateTimeInfluence(
+            userBirthDate: birthDate,
+            primaryCard: birthCardId,
             evaluationDate: tomorrow
         )
     }
-    
-    private func getDateForDayOffset(_ offset: Int) -> Date {
-        return userCalendar.date(byAdding: .day, value: offset, to: calculationDate) ?? calculationDate
-    }
-    
+
     func formatCardName(_ name: String) -> String {
         return name.prefix(1).uppercased() + name.dropFirst().lowercased()
     }
@@ -212,6 +222,7 @@ class HomeViewModel: CardViewModel {
     @Published var isLoading: Bool = false
     @Published var showTapToReveal = false
     @Published var pulseScale: CGFloat = 1.0
+    @Published var showTutorial = false
     
     private let dataManager = DataManager.shared
     private let calculator = CardCalculationService()
@@ -235,18 +246,42 @@ class HomeViewModel: CardViewModel {
         let cardId = calculator.extractCycleCard(primaryCard: userBirthCard.id, personAge: age, phaseNumber: currentPeriod)
         return dataManager.getCard(by: cardId)
     }
+
+    var userDailyCard: Card {
+        let dailyResult = calculator.generateTimeInfluence(
+            userBirthDate: dataManager.userProfile.birthDate,
+            primaryCard: userBirthCard.id,
+            evaluationDate: Date()
+        )
+        return dailyResult.card
+    }
+
+    func checkFirstLaunch() {
+        if !UserDefaults.standard.bool(forKey: "hasSeenOnboarding") {
+            showTutorial = true
+        }
+    }
+    
+    func completeTutorial() {
+        UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
+        showTutorial = false
+        // Start animations after tutorial completes if card not yet revealed
+        if !DataManager.shared.isDailyCardRevealed {
+            startHomeAnimations()
+        }
+    }
     
     func startHomeAnimations() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             withAnimation(.easeIn(duration: AppConstants.Animation.fadeInDuration)) {
                 self.showTapToReveal = true
             }
-            
+
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 withAnimation(.easeInOut(duration: AppConstants.Animation.pulseDuration)) {
                     self.pulseScale = AppConstants.Animation.pulseScale
                 }
-                
+
                 DispatchQueue.main.asyncAfter(deadline: .now() + AppConstants.Animation.pulseDuration) {
                     withAnimation(.easeInOut(duration: AppConstants.Animation.pulseDuration)) {
                         self.pulseScale = 1.0
@@ -255,11 +290,11 @@ class HomeViewModel: CardViewModel {
             }
         }
     }
-    
+
     func cardToImageName(_ card: Card) -> String {
         let value = String(describing: card.value).lowercased()
         let suit = String(describing: card.suit).lowercased()
-        
+
         let suitChar: String
         switch suit {
         case "hearts": suitChar = "h"
@@ -268,7 +303,7 @@ class HomeViewModel: CardViewModel {
         case "spades": suitChar = "s"
         default: suitChar = "s"
         }
-        
+
         let valueChar: String
         switch value {
         case "ace": valueChar = "a"
@@ -286,7 +321,7 @@ class HomeViewModel: CardViewModel {
         case "ten": valueChar = "10"
         default: valueChar = value
         }
-        
+
         return "\(valueChar)\(suitChar)"
     }
 }

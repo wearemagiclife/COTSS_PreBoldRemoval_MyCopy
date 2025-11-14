@@ -28,6 +28,9 @@ struct CardDetailModalView: View {
                     closeModal()
                 }
                 .allowsHitTesting(isPresented)
+                .accessibilityLabel("Close card details")
+                .accessibilityAddTraits(.isButton)
+                .accessibilityHint("Double tap to close")
 
             ScrollView {
                 VStack(spacing: 25) {
@@ -40,6 +43,8 @@ struct CardDetailModalView: View {
                                     .frame(height: 300)
                                     .clipShape(RoundedRectangle(cornerRadius: 16))
                                     .shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: 5)
+                                    .accessibilityLabel("\(planet) planetary influence")
+                                    .accessibilityAddTraits(.isImage)
                             }
                         } else {
                             if let uiImage = ImageManager.shared.loadCardImage(for: card) {
@@ -49,6 +54,8 @@ struct CardDetailModalView: View {
                                     .frame(height: 300)
                                     .clipShape(RoundedRectangle(cornerRadius: 16))
                                     .shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: 5)
+                                    .accessibilityLabel("\(card.value) of \(card.suit.rawValue)")
+                                    .accessibilityAddTraits(.isImage)
                             }
                         }
                     }
@@ -72,6 +79,8 @@ struct CardDetailModalView: View {
                                             .renderingMode(.original)
                                             .scaledToFit()
                                             .frame(height: nameGlyphHeight)
+                                            .accessibilityLabel(def.name)
+                                            .accessibilityAddTraits(.isHeader)
                                     } else {
 #if DEBUG
                                         // Visual debug: if asset is missing, show a subtle placeholder to catch it
@@ -89,6 +98,7 @@ struct CardDetailModalView: View {
                                         .font(.custom("Iowan Old Style", size: 21))
                                         .foregroundColor(.black)
                                         .multilineTextAlignment(.center)
+                                        .padding(.top, 2)
                                 }
                             }
                         }
@@ -96,13 +106,17 @@ struct CardDetailModalView: View {
                         Rectangle()
                             .frame(width: 80, height: 1)
                             .foregroundColor(.black.opacity(0.6))
+                            .padding(.vertical, 15)
+                            .accessibilityHidden(true)
 
                         Text(descriptionText())
-                            .font(.custom("Iowan Old Style", size: 18))
-                            .tracking(0.8)  // Add this line for better character spacing
+                            .font(.custom("Iowan Old Style", size: 20))
+                            .lineSpacing(5)
+                            .tracking(0.8)
                             .foregroundColor(.black)
                             .multilineTextAlignment(.leading)
-                            .padding(.horizontal, 25)                    }
+                            .padding(.horizontal, 25)
+                    }
                 }
                 .padding(.vertical, 20)
                 .padding(.horizontal, 20)

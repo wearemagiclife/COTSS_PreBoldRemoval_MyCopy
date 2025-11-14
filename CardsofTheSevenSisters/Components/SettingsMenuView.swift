@@ -8,18 +8,16 @@ struct SettingsMenuView: View {
             List {
                 Section {
                     NavigationLink {
-                        // Your existing profile sheet UI
                         ProfileSheet()
                     } label: {
                         SettingsRow(
                             systemImage: "person.crop.circle",
                             title: "Profile",
-                            subtitle: "Name & birth date"
+                            subtitle: "Name, birth date & sign-in"
                         )
                     }
                     
                     NavigationLink {
-                        // Your new notifications settings screen
                         NotificationSettingsView()
                     } label: {
                         SettingsRow(
@@ -29,19 +27,8 @@ struct SettingsMenuView: View {
                         )
                     }
                     
-                    NavigationLink {
-                        // Your onboarding/tutorial flow
-                        OnboardingTutorialView()
-                    } label: {
-                        SettingsRow(
-                            systemImage: "sparkles",
-                            title: "Tutorial",
-                            subtitle: "How this deck works"
-                        )
-                    }
                     
                     NavigationLink {
-                        // Your legal links screen
                         LegalLinksView()
                     } label: {
                         SettingsRow(
@@ -63,7 +50,7 @@ struct SettingsMenuView: View {
                 }
             }
             .scrollContentBackground(.hidden)
-            .background(Color(red: 0.91, green: 0.82, blue: 0.63))
+            .background(AppTheme.backgroundColor)
             .navigationTitle("Settings")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -77,7 +64,7 @@ struct SettingsMenuView: View {
                                 Circle()
                                     .fill(Color.white.opacity(0.7))
                             )
-                            .foregroundColor(.black)
+                            .foregroundColor(AppTheme.primaryText)
                     }
                 }
             }
@@ -91,7 +78,6 @@ struct SettingsMenuView: View {
     }
 }
 
-// Reusable row style for the settings list
 private struct SettingsRow: View {
     let systemImage: String
     let title: String
@@ -106,11 +92,12 @@ private struct SettingsRow: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)
                     .font(.custom("Iowan Old Style", size: 18))
+                    .foregroundColor(AppTheme.primaryText)
                 
                 if let subtitle = subtitle {
                     Text(subtitle)
                         .font(.custom("Iowan Old Style", size: 14))
-                        .foregroundColor(.secondary)
+                        .foregroundColor(AppTheme.secondaryText)
                 }
             }
         }

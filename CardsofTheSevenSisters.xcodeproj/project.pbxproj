@@ -20,32 +20,32 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D0061DAA2DE2DE1300644B93 /* CardsOfTheSevenSisters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardsOfTheSevenSisters.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0061DAA2DE2DE1300644B93 /* CardsofTheSevenSisters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardsofTheSevenSisters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03B891B2E965ED4008142F6 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		D0AE32C52DE3F2F400F3E779 /* Exceptions for "CardsOfTheSevenSisters" folder in "CardsOfTheSevenSisters" target */ = {
+		D0AE32C52DE3F2F400F3E779 /* Exceptions for "CardsofTheSevenSisters" folder in "CardsofTheSevenSisters" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = D0061DA92DE2DE1300644B93 /* CardsOfTheSevenSisters */;
+			target = D0061DA92DE2DE1300644B93 /* CardsofTheSevenSisters */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D0061DAC2DE2DE1300644B93 /* CardsOfTheSevenSisters */ = {
+		D0061DAC2DE2DE1300644B93 /* CardsofTheSevenSisters */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				D0AE32C52DE3F2F400F3E779 /* Exceptions for "CardsOfTheSevenSisters" folder in "CardsOfTheSevenSisters" target */,
+				D0AE32C52DE3F2F400F3E779 /* Exceptions for "CardsofTheSevenSisters" folder in "CardsofTheSevenSisters" target */,
 			);
-			path = CardsOfTheSevenSisters;
+			path = CardsofTheSevenSisters;
 			sourceTree = "<group>";
 		};
-		D03B891D2E965ED4008142F6 /* Cards Of The Seven Sisters */ = {
+		D03B891D2E965ED4008142F6 /* Cards of The Seven Sisters */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Cards Of The Seven Sisters";
+			path = "Cards of The Seven Sisters";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -64,8 +64,8 @@
 		D0061DA12DE2DE1300644B93 = {
 			isa = PBXGroup;
 			children = (
-				D0061DAC2DE2DE1300644B93 /* CardsOfTheSevenSisters */,
-				D03B891D2E965ED4008142F6 /* Cards Of The Seven Sisters */,
+				D0061DAC2DE2DE1300644B93 /* CardsofTheSevenSisters */,
+				D03B891D2E965ED4008142F6 /* Cards of The Seven Sisters */,
 				D03B891A2E965ED4008142F6 /* Frameworks */,
 				D0061DAB2DE2DE1300644B93 /* Products */,
 			);
@@ -74,7 +74,7 @@
 		D0061DAB2DE2DE1300644B93 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0061DAA2DE2DE1300644B93 /* CardsOfTheSevenSisters.app */,
+				D0061DAA2DE2DE1300644B93 /* CardsofTheSevenSisters.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,9 +90,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D0061DA92DE2DE1300644B93 /* CardsOfTheSevenSisters */ = {
+		D0061DA92DE2DE1300644B93 /* CardsofTheSevenSisters */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D0061DB82DE2DE1500644B93 /* Build configuration list for PBXNativeTarget "CardsOfTheSevenSisters" */;
+			buildConfigurationList = D0061DB82DE2DE1500644B93 /* Build configuration list for PBXNativeTarget "CardsofTheSevenSisters" */;
 			buildPhases = (
 				D0061DA62DE2DE1300644B93 /* Sources */,
 				D0061DA72DE2DE1300644B93 /* Frameworks */,
@@ -104,13 +104,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				D0061DAC2DE2DE1300644B93 /* CardsOfTheSevenSisters */,
+				D0061DAC2DE2DE1300644B93 /* CardsofTheSevenSisters */,
 			);
-			name = CardsOfTheSevenSisters;
+			name = CardsofTheSevenSisters;
 			packageProductDependencies = (
 			);
-			productName = MyCardsOfDestiny;
-			productReference = D0061DAA2DE2DE1300644B93 /* CardsOfTheSevenSisters.app */;
+			productName = "Cards of The Seven Sisters";
+			productReference = D0061DAA2DE2DE1300644B93 /* CardsofTheSevenSisters.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -121,14 +121,14 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1640;
-				LastUpgradeCheck = 1640;
+				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					D0061DA92DE2DE1300644B93 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = D0061DA52DE2DE1300644B93 /* Build configuration list for PBXProject "CardsOfTheSevenSisters" */;
+			buildConfigurationList = D0061DA52DE2DE1300644B93 /* Build configuration list for PBXProject "CardsofTheSevenSisters" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -142,7 +142,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D0061DA92DE2DE1300644B93 /* CardsOfTheSevenSisters */,
+				D0061DA92DE2DE1300644B93 /* CardsofTheSevenSisters */,
 			);
 		};
 /* End PBXProject section */
@@ -203,6 +203,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = N6R87NMS8K;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -226,6 +227,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -266,6 +268,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = N6R87NMS8K;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -282,6 +285,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -297,11 +301,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CardsOfTheSevenSisters/Preview Content\"";
-				DEVELOPMENT_TEAM = N6R87NMS8K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CardsOfTheSevenSisters/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Cards Of The Seven Sisters";
+				INFOPLIST_KEY_CFBundleDisplayName = "Cards of The Seven Sisters";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -333,11 +336,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CardsOfTheSevenSisters/Preview Content\"";
-				DEVELOPMENT_TEAM = N6R87NMS8K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CardsOfTheSevenSisters/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Cards Of The Seven Sisters";
+				INFOPLIST_KEY_CFBundleDisplayName = "Cards of The Seven Sisters";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -362,7 +364,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D0061DA52DE2DE1300644B93 /* Build configuration list for PBXProject "CardsOfTheSevenSisters" */ = {
+		D0061DA52DE2DE1300644B93 /* Build configuration list for PBXProject "CardsofTheSevenSisters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0061DB62DE2DE1500644B93 /* Debug */,
@@ -371,7 +373,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D0061DB82DE2DE1500644B93 /* Build configuration list for PBXNativeTarget "CardsOfTheSevenSisters" */ = {
+		D0061DB82DE2DE1500644B93 /* Build configuration list for PBXNativeTarget "CardsofTheSevenSisters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0061DB92DE2DE1500644B93 /* Debug */,

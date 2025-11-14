@@ -19,6 +19,7 @@ struct TappableCard: View {
         let shape = RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
         let pageColor = Color(red: 0.86, green: 0.77, blue: 0.57)
         let insets = FixedInsets.forWidth(size.width)
+        let accessibilityLabel = cardAccessibilityLabel
 
         if let image = ImageManager.shared.loadCardImage(for: card) {
             ZStack {
@@ -34,10 +35,21 @@ struct TappableCard: View {
             .contentShape(shape)
             .cardShadow(isLarge: size.width >= AppConstants.CardSizes.medium.width)
             .onTapGesture { action() }
+            .accessibilityLabel(accessibilityLabel)
+            .accessibilityAddTraits([.isButton, .isImage])
         } else {
             FallbackCardView(card: card, size: size, cornerRadius: cornerRadius)
                 .onTapGesture { action() }
+                .accessibilityLabel(accessibilityLabel)
+                .accessibilityAddTraits([.isButton, .isImage])
         }
+    }
+
+    private var cardAccessibilityLabel: String {
+        if let def = getCardDefinition(by: card.id) {
+            return "\(def.name), tap for details"
+        }
+        return "\(card.value) of \(card.suit.rawValue), tap for details"
     }
 }
 
@@ -60,6 +72,7 @@ struct TappablePlanetCard: View {
         let shape = RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
         let pageColor = Color(red: 0.86, green: 0.77, blue: 0.57)
         let insets = FixedInsets.forWidth(size.width)
+        let accessibilityLabel = "\(planet), tap for details"
 
         if let image = ImageManager.shared.loadPlanetImage(for: planet) {
             ZStack {
@@ -75,9 +88,13 @@ struct TappablePlanetCard: View {
             .contentShape(shape)
             .cardShadow(isLarge: size.width >= AppConstants.CardSizes.medium.width)
             .onTapGesture { action() }
+            .accessibilityLabel(accessibilityLabel)
+            .accessibilityAddTraits([.isButton, .isImage])
         } else {
             FallbackPlanetView(planet: planet, size: size, cornerRadius: cornerRadius)
                 .onTapGesture { action() }
+                .accessibilityLabel(accessibilityLabel)
+                .accessibilityAddTraits([.isButton, .isImage])
         }
     }
 }
@@ -164,11 +181,11 @@ struct FallbackCardView: View {
     @ViewBuilder
     private func suitIcon(for suit: CardSuit) -> some View {
         switch suit {
-        case .hearts:   Image(systemName: "heart").font(.title2).foregroundColor(.red)
-        case .clubs:    Image(systemName: "suit.club").font(.title2).foregroundColor(.black)
-        case .diamonds: Image(systemName: "diamond").font(.title2).foregroundColor(.red)
-        case .spades:   Image(systemName: "suit.spade").font(.title2).foregroundColor(.black)
-        case .joker:    Text("🃏").font(.title2)
+        case .hearts:   Image(systemName: "heart").font(.title2).foregroundColor(.red).accessibilityHidden(true)
+        case .clubs:    Image(systemName: "suit.club").font(.title2).foregroundColor(.black).accessibilityHidden(true)
+        case .diamonds: Image(systemName: "diamond").font(.title2).foregroundColor(.red).accessibilityHidden(true)
+        case .spades:   Image(systemName: "suit.spade").font(.title2).foregroundColor(.black).accessibilityHidden(true)
+        case .joker:    Text("🃏").font(.title2).accessibilityHidden(true)
         }
     }
 }
@@ -260,10 +277,12 @@ struct LineBreak: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: height)
+                .accessibilityHidden(true)
         } else {
             Rectangle()
                 .frame(height: 1)
                 .foregroundColor(.black.opacity(0.3))
+                .accessibilityHidden(true)
         }
     }
 }

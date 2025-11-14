@@ -6,7 +6,8 @@ class DataManager: ObservableObject {
     @Published var userProfile = UserProfile()
     @Published var explorationDate: Date?
     @Published var isDailyCardRevealed: Bool = false
-    
+    @Published var isInitialized: Bool = false
+
     private var cards: [Card] = []
     private var karmaConnections1: [String: KarmaConnection] = [:]
     private var karmaConnections2: [String: KarmaConnection] = [:]
@@ -16,10 +17,19 @@ class DataManager: ObservableObject {
     }
 
     private init() {
-        loadCardData()
-        loadKarmaData()
+        // Only load critical synchronous data
         loadUserProfile()
         checkDailyCardRevealStatus()
+
+        // Load heavy data asynchronously in background
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            self?.loadCardData()
+            self?.loadKarmaData()
+
+            DispatchQueue.main.async {
+                self?.isInitialized = true
+            }
+        }
     }
 
     private func loadCardData() {
@@ -302,16 +312,13 @@ extension DataManager {
                 
                 do {
                     let periodData = try JSONDecoder().decode(PlanetaryPeriodData.self, from: data)
-                    print("✅ Successfully loaded planetary periods from: \(url.path)")
                     return periodData.planetaryPeriods
                 } catch {
-                    print("❌ JSON decode error: \(error)")
                     continue
                 }
             }
         }
-        
-        print("❌ Failed to load planetary periods JSON from any location")
+
         return nil
     }
     
@@ -320,10 +327,9 @@ extension DataManager {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd"
         let birthKey = formatter.string(from: birthDate)
-        
+
         guard let periods = loadPlanetaryPeriods(),
               let period = periods[birthKey] else {
-            print("❌ No planetary period found for birth date: \(birthKey)")
             return nil
         }
         
@@ -471,30 +477,12 @@ extension DataManager {
     // Format date range with smart year handling
     func formatDateRange(start: Date, end: Date) -> String {
         let formatter = DateFormatter()
-        let calendar = Calendar.current
-        
-        let startYear = calendar.component(.year, from: start)
-        let endYear = calendar.component(.year, from: end)
-        let currentYear = calendar.component(.year, from: Date())
-        
-        if startYear == endYear {
-            // Same year
-            formatter.dateFormat = "MMM d"
-            let startString = formatter.string(from: start)
-            let endString = formatter.string(from: end)
-            
-            if startYear == currentYear {
-                return "\(startString) - \(endString)"
-            } else {
-                return "\(startString) - \(endString), \(startYear)"
-            }
-        } else {
-            // Different years
-            formatter.dateFormat = "MMM d, yyyy"
-            let startString = formatter.string(from: start)
-            let endString = formatter.string(from: end)
-            return "\(startString) - \(endString)"
-        }
+        formatter.dateFormat = "MMM d"
+
+        let startString = formatter.string(from: start)
+        let endString = formatter.string(from: end)
+
+        return "\(startString) - \(endString)"
     }
 }
 
@@ -515,7 +503,6 @@ private let cardsByID: [Int: CardDefinition] = {
     guard let url = Bundle.main.url(forResource: "cards_base", withExtension: "json"),
           let data = try? Data(contentsOf: url),
           let deck = try? JSONDecoder().decode(CardDeck.self, from: data) else {
-        print("⚠️ Failed to load cards_base.json")
         return [:]
     }
     return Dictionary(uniqueKeysWithValues: deck.cards.map { ($0.id, $0) })

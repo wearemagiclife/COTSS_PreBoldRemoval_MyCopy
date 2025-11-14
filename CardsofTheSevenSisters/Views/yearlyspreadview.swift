@@ -8,23 +8,23 @@ struct YearlySpreadView: View {
     @State private var selectedCard: Card? = nil
     
     private let cardType: CardType = .yearly
-    
-    private var shareContent: ShareCardContent {
-        if let selectedCard = selectedCard {
-            return ShareCardContent.fromModal(
-                card: selectedCard,
-                cardType: cardType,
-                contentType: nil,
-                date: Date()
-            )
-        } else {
-            return ShareCardContent.fromModal(
-                card: viewModel.currentYearCard,
-                cardType: CardType.yearly,
-                contentType: nil,
-                date: Date()
-            )
+
+    private var yearlyCardTitle: String {
+        if let def = getCardDefinition(by: viewModel.currentYearCard.id) {
+            return def.name
         }
+        return viewModel.currentYearCard.name
+    }
+
+    private var yearlyCardDescription: String {
+        let repo = DescriptionRepository.shared
+        return repo.yearlyDescriptions[String(viewModel.currentYearCard.id)] ?? "No description available."
+    }
+
+    private var currentYear: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy"
+        return formatter.string(from: viewModel.calculationDate)
     }
     
     // Date range computed properties
@@ -73,7 +73,7 @@ struct YearlySpreadView: View {
                 CardDetailModalView(
                     card: card,
                     cardType: cardType,
-                    contentType: nil,
+                    contentType: nil as DetailContentType?,
                     isPresented: $showCardDetail
                 )
                 .zIndex(10)
@@ -94,8 +94,14 @@ struct YearlySpreadView: View {
             trailingContent: {
                 AnyView(
                     HStack(spacing: 12) {
-                        ShareCardShareLink(content: shareContent, size: .portrait1080x1350)
-                        
+                        SingleCardShareLink(
+                            card: viewModel.currentYearCard,
+                            cardTitle: yearlyCardTitle,
+                            cardDescription: yearlyCardDescription,
+                            readingType: "Yearly Card",
+                            subtitle: currentYear
+                        )
+
                         if DataManager.shared.explorationDate != nil {
                             Button(AppConstants.Strings.reset) {
                                 DataManager.shared.explorationDate = nil

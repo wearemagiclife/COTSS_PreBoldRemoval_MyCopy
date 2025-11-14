@@ -1,0 +1,56 @@
+{
+  "source": "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Components/NotificationSettingsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Notifications",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 39
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reminders",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 17
+        }
+      },
+      {
+        "comment": "",
+        "key": "Daily Card Reminder",
+        "location": {
+          "startingColumn": 37,
+          "startingLine": 33
+        }
+      },
+      {
+        "comment": "",
+        "key": "Toggle daily notification at 12:00 PM",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 34
+        }
+      },
+      {
+        "comment": "",
+        "key": "Daily Card Reminder",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 23
+        }
+      },
+      {
+        "comment": "",
+        "key": "Receive a Daily Card notification at 12:00 PM each day",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 27
+        }
+      }
+    ]
+  },
+  "version": 1
+}

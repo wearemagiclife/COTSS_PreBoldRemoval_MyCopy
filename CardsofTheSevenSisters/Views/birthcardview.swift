@@ -163,7 +163,8 @@ struct BirthCardView: View {
                                 karmaCard: karmaCard,
                                 karmaCardTitle: karmaCardTitle,
                                 karmaCardDescription: karmaCardDescription,
-                                birthDate: dataManager.userProfile.birthDate
+                                birthDate: dataManager.userProfile.birthDate,
+                                userName: dataManager.userProfile.name
                             )
                         } else {
                             SingleCardShareLink(

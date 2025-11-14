@@ -26,6 +26,23 @@ struct DailyCardView: View {
             )
         }
     }
+
+    private var dailyCardTitle: String {
+        if let def = getCardDefinition(by: viewModel.todayCard.card.id) {
+            return def.name
+        }
+        return viewModel.todayCard.card.name
+    }
+
+    private var dailyCardDescription: String {
+        let repo = DescriptionRepository.shared
+        return repo.dailyDescriptions[String(viewModel.todayCard.card.id)] ?? "No description available."
+    }
+
+    private var planetInfo: (title: String, description: String) {
+        let info = AppConstants.PlanetDescriptions.getDescription(for: viewModel.todayCard.planet)
+        return (info.title, info.description)
+    }
     
     var body: some View {
         ZStack {
@@ -73,8 +90,17 @@ struct DailyCardView: View {
             trailingContent: {
                 AnyView(
                     HStack(spacing: 12) {
-                        ShareCardShareLink(content: shareContent, size: .portrait1080x1350)
-                        
+                        DailyCardShareLink(
+                            dailyCard: viewModel.todayCard.card,
+                            dailyCardTitle: dailyCardTitle,
+                            dailyCardDescription: dailyCardDescription,
+                            planetName: viewModel.todayCard.planet,
+                            planetTitle: planetInfo.title,
+                            planetDescription: planetInfo.description,
+                            date: viewModel.calculationDate,
+                            cardTypeName: "Daily Card"
+                        )
+
                         if DataManager.shared.explorationDate != nil {
                             Button(AppConstants.Strings.reset) {
                                 DataManager.shared.explorationDate = nil
