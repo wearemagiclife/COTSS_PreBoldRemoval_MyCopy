@@ -52,7 +52,7 @@ struct OnboardingTutorialView: View {
            ),
            TutorialStep(
                cardTypeHeader: "YOUR BIRTH CARD",
-               description: "This archetype gives insight to lifelong motifs. Your Birth Card, or Sun Card, is based on your birthday. It's used to calculate every other card in your Spread."
+               description: "This archetype gives insight to lifelong motifs. Your Birth Card is based on your birthday. It's used to calculate every other card in your Spread."
            ),
            TutorialStep(
                cardTypeHeader: "YEARLY SOLAR CYCLE",

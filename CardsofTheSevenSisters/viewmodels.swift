@@ -87,7 +87,7 @@ class DailyCardViewModel: CardViewModel {
     }
 }
 
-class BirthCardViewModel: CardViewModel {
+class lifeSpreadViewModel: CardViewModel {
     @Published var errorMessage: String = ""
     @Published var isLoading: Bool = false
     
