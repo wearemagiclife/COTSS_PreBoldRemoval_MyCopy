@@ -1,0 +1,16 @@
+{
+  "source": "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/cardcomponents.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "🃏",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 188
+        }
+      }
+    ]
+  },
+  "version": 1
+}

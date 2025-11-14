@@ -118,8 +118,8 @@ struct YearlySpreadView: View {
     
     private var headerSection: some View {
         VStack(spacing: AppConstants.Spacing.titleSpacing) {
-            // "YOUR YEARLY CYCLE" as main title
-            Text("YOUR YEARLY CYCLE")
+            // "THIS YEAR'S CARD" as main title
+            Text("YEARLY SOLAR CYCLE")
                 .font(.custom("Iowan Old Style", size: AppConstants.FontSizes.large))
                 .fontWeight(.heavy)
                 .foregroundColor(.black)

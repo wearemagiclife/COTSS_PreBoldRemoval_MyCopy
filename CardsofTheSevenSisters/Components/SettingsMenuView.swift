@@ -3,55 +3,77 @@ import SwiftUI
 struct SettingsMenuView: View {
     @Environment(\.dismiss) private var dismiss
     
+    // Reuse the same parchment tone you use elsewhere
+    private let cardBackground = Color(red: 0.86, green: 0.77, blue: 0.57)
+    
     var body: some View {
         NavigationStack {
-            List {
-                Section {
-                    NavigationLink {
-                        ProfileSheet()
-                    } label: {
-                        SettingsRow(
-                            systemImage: "person.crop.circle",
-                            title: "Profile",
-                            subtitle: "Name, birth date & sign-in"
-                        )
+            ZStack {
+                // Full-screen app background
+                Color.launchScreenBackground
+                    .ignoresSafeArea()
+                
+                ScrollView {
+                    VStack(spacing: 20) {
+                        // Optional: small header inside the sheet as well
+                        Text("Settings")
+                            .font(.custom("Iowan Old Style", size: 24))
+                            .foregroundColor(AppTheme.primaryText)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.top, 8)
+                        
+                        VStack(spacing: 14) {
+                            NavigationLink {
+                                ProfileSheet()
+                            } label: {
+                                SettingsRow(
+                                    systemImage: "person.crop.circle",
+                                    title: "Profile",
+                                    subtitle: "Name, birth date & sign-in",
+                                    cardBackground: cardBackground
+                                )
+                            }
+                            
+                            NavigationLink {
+                                NotificationSettingsView()
+                            } label: {
+                                SettingsRow(
+                                    systemImage: "bell.badge",
+                                    title: "Notifications",
+                                    subtitle: "Daily card reminders",
+                                    cardBackground: cardBackground
+                                )
+                            }
+                            
+                            NavigationLink {
+                                LegalLinksView()
+                            } label: {
+                                SettingsRow(
+                                    systemImage: "doc.text.magnifyingglass",
+                                    title: "Legal & Policies",
+                                    subtitle: "Privacy & Terms",
+                                    cardBackground: cardBackground
+                                )
+                            }
+                            
+                            Button {
+                                openWebsite()
+                            } label: {
+                                SettingsRow(
+                                    systemImage: "globe",
+                                    title: "Visit Website",
+                                    subtitle: "www.sevensisters.cards",
+                                    cardBackground: cardBackground
+                                )
+                            }
+                        }
                     }
-                    
-                    NavigationLink {
-                        NotificationSettingsView()
-                    } label: {
-                        SettingsRow(
-                            systemImage: "bell.badge",
-                            title: "Notifications",
-                            subtitle: "Daily card reminders"
-                        )
-                    }
-                    
-                    
-                    NavigationLink {
-                        LegalLinksView()
-                    } label: {
-                        SettingsRow(
-                            systemImage: "doc.text.magnifyingglass",
-                            title: "Legal & Policies",
-                            subtitle: "Privacy & Terms"
-                        )
-                    }
-                    
-                    Button {
-                        openWebsite()
-                    } label: {
-                        SettingsRow(
-                            systemImage: "globe",
-                            title: "Visit Website",
-                            subtitle: "wearemagic.life"
-                        )
-                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 32)
                 }
             }
-            .scrollContentBackground(.hidden)
-            .background(AppTheme.backgroundColor)
-            .navigationTitle("Settings")
+            .navigationTitle("") // we’ll style our own header
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
@@ -62,17 +84,20 @@ struct SettingsMenuView: View {
                             .padding(8)
                             .background(
                                 Circle()
-                                    .fill(Color.white.opacity(0.7))
+                                    .fill(cardBackground.opacity(0.9))
                             )
                             .foregroundColor(AppTheme.primaryText)
                     }
                 }
             }
+            // Match nav bar to background so it doesn’t show as a gray bar
+            .toolbarBackground(Color.launchScreenBackground, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
         }
     }
     
     private func openWebsite() {
-        if let url = URL(string: "https://wearemagic.life") {
+        if let url = URL(string: "https://sevensisters.cards") {
             UIApplication.shared.open(url)
         }
     }
@@ -82,12 +107,19 @@ private struct SettingsRow: View {
     let systemImage: String
     let title: String
     let subtitle: String?
+    let cardBackground: Color
     
     var body: some View {
         HStack(spacing: 16) {
-            Image(systemName: systemImage)
-                .font(.system(size: 20))
-                .frame(width: 32, height: 32)
+            ZStack {
+                Circle()
+                    .strokeBorder(AppTheme.primaryText.opacity(0.25), lineWidth: 1)
+                    .frame(width: 40, height: 40)
+                
+                Image(systemName: systemImage)
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundColor(AppTheme.primaryText)
+            }
             
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)
@@ -100,7 +132,20 @@ private struct SettingsRow: View {
                         .foregroundColor(AppTheme.secondaryText)
                 }
             }
+            
+            Spacer()
         }
-        .padding(.vertical, 6)
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .fill(cardBackground.opacity(0.96))
+                .shadow(color: .black.opacity(0.12), radius: 8, x: 0, y: 4)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(AppTheme.primaryText.opacity(0.10), lineWidth: 1)
+        )
+        .contentShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
     }
 }

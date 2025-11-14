@@ -45,7 +45,7 @@ enum ShareCardExportSize: CaseIterable {
     }
 }
 
-// MARK: - Single Card Share (Birth / Yearly etc.)
+// MARK: - Single Card Share (Birth / Yearly / etc.)
 
 struct SingleCardShareView: View {
     let card: Card
@@ -156,7 +156,7 @@ struct SingleCardShareView: View {
     }
 }
 
-// MARK: - Astral Cycle (Card + Planet Spread)
+// MARK: - Astral Cycle (Card + Planet spread)
 
 struct AstralCycleShareView: View {
     let cycleCard: Card
@@ -165,7 +165,7 @@ struct AstralCycleShareView: View {
     let planetName: String
     let planetTitle: String
     let planetDescription: String
-    let cycleInfo: String // e.g., "Mercury Phase - Jan 1 to Feb 21"
+    let cycleInfo: String // e.g., "Mercury Phase – Jan 1 to Feb 21"
 
     private let inkColor = Color.black
     private let backgroundColor = Color(red: 0.86, green: 0.77, blue: 0.57)
@@ -703,7 +703,7 @@ struct ShareCardView: View {
 
         return content.image
             .resizable()
-            .aspectRatio(16/20, contentMode: .fit)
+            .aspectRatio(16 / 20, contentMode: .fit)
             .frame(width: imageWidth, height: imageHeight)
             .clipShape(RoundedRectangle(cornerRadius: 16))
             .shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: 5)
@@ -913,6 +913,18 @@ class ShareCardActivityItemSource: NSObject, UIActivityItemSource {
 
         return metadata
     }
+}
+
+// MARK: - ShareSheet Wrapper (used by all share links)
+
+struct ShareSheetWrapper: UIViewControllerRepresentable {
+    let activityItems: [Any]
+
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+    }
+
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }
 
 // MARK: - Share Link: Daily Card
@@ -1313,12 +1325,12 @@ struct SingleCardShareLink: View {
     let cardDescription: String
     let readingType: String  // e.g., "Birth Card"
     let subtitle: String?    // Optional subtitle
-    
+
     @State private var isLoading = false
     @State private var isShowingShareSheet = false
     @State private var shareItems: [Any] = []
     @State private var errorMessage: String?
-    
+
     var body: some View {
         Button(action: shareCard) {
             if isLoading {
@@ -1360,6 +1372,144 @@ struct SingleCardShareLink: View {
             }
         }
     }
-    
-    private func
+
+    private func shareCard() {
+        isLoading = true
+        Task {
+            do {
+                let shareView = SingleCardShareView(
+                    card: card,
+                    cardTitle: cardTitle,
+                    cardDescription: cardDescription,
+                    readingType: readingType,
+                    subtitle: subtitle
+                )
+
+                let renderer = ImageRenderer(content: shareView)
+                renderer.proposedSize = ProposedViewSize(width: 1200, height: 1200)
+                renderer.scale = 2.0
+
+                guard let renderedImage = renderer.uiImage else {
+                    throw ShareCardError.renderingFailed
+                }
+
+                let imageWithoutAlpha = removeAlphaChannel(from: renderedImage)
+
+                guard let imageData = imageWithoutAlpha.jpegData(compressionQuality: 0.9) else {
+                    throw ShareCardError.pngConversionFailed
+                }
+
+                let tempDir = FileManager.default.temporaryDirectory
+                let fileName = "My \(readingType) reading by Cards of The Seven Sisters.jpg"
+                let fileURL = tempDir.appendingPathComponent(fileName)
+
+                try imageData.write(to: fileURL)
+
+                await MainActor.run {
+                    let activityItemSource = ShareCardActivityItemSource(
+                        image: imageWithoutAlpha,
+                        fileURL: fileURL,
+                        subject: "My \(readingType) reading by Cards of The Seven Sisters"
+                    )
+
+                    self.shareItems = [activityItemSource]
+                    isLoading = false
+                    isShowingShareSheet = true
+                }
+            } catch {
+                await MainActor.run {
+                    isLoading = false
+                    errorMessage = error.localizedDescription
+                }
+            }
+        }
+    }
+
+    private func removeAlphaChannel(from image: UIImage) -> UIImage {
+        let format = UIGraphicsImageRendererFormat()
+        format.opaque = true
+        format.scale = image.scale
+
+        let renderer = UIGraphicsImageRenderer(size: image.size, format: format)
+        return renderer.image { context in
+            UIColor.white.setFill()
+            context.fill(CGRect(origin: .zero, size: image.size))
+            image.draw(at: .zero)
+        }
+    }
+}
+
+// MARK: - Support extensions
+
+extension DateFormatter {
+    static let shortDate: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter
+    }()
+}
+
+extension ShareCardContent {
+    static func fromModal(
+        card: Card,
+        cardType: CardType,
+        contentType: DetailContentType?,
+        date: Date = Date()
+    ) -> ShareCardContent {
+
+        var cardName = ""
+        var cardTitle = ""
+        var description = ""
+        var image: Image = Image(systemName: "questionmark.card")
+
+        if case .planetary(let planet) = contentType {
+            let planetInfo = AppConstants.PlanetDescriptions.getDescription(for: planet)
+            cardName = planet.uppercased()
+            cardTitle = planetInfo.title
+            description = planetInfo.description
+
+            if let planetImage = ImageManager.shared.loadPlanetImage(for: planet) {
+                image = Image(uiImage: planetImage)
+            }
+        } else {
+            if let def = getCardDefinition(by: card.id) {
+                cardName = def.name
+                cardTitle = def.title
+            }
+
+            if let cardImage = ImageManager.shared.loadCardImage(for: card) {
+                image = Image(uiImage: cardImage)
+            }
+
+            let repo = DescriptionRepository.shared
+            let cardID = String(card.id)
+
+            switch contentType {
+            case .karma(let karmaDescription):
+                description = karmaDescription
+            default:
+                switch cardType {
+                case .daily:
+                    description = repo.dailyDescriptions[cardID] ?? "No daily description available."
+                case .birth:
+                    description = repo.birthDescriptions[cardID] ?? "No birth description available."
+                case .yearly:
+                    description = repo.yearlyDescriptions[cardID] ?? "No yearly description available."
+                case .fiftyTwoDay:
+                    description = repo.fiftyTwoDescriptions[cardID] ?? "No 52-day description available."
+                case .planetary:
+                    description = "Error: Should be handled above"
+                }
+            }
+        }
+
+        return ShareCardContent(
+            title: cardName,
+            subtitle: cardTitle,
+            excerpt: description,
+            date: date,
+            image: image
+        )
+    }
 }

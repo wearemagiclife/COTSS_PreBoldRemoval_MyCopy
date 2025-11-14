@@ -157,7 +157,7 @@ struct HomeView: View {
                 ActualCardTileSmall(
                     card: viewModel.userBirthCard,
                     title: AppConstants.Strings.birthCard,
-                    destination: lifeSpreadView()
+                    destination: LifeSpreadView()
                 )
 
                 ActualCardTileSmall(

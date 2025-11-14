@@ -1,0 +1,23 @@
+{
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Components/CardDetailModalView.swift" : {
+    "const-values" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardDetailModalView.swiftconstvalues",
+    "dependencies" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardDetailModalView.d",
+    "diagnostics" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardDetailModalView.dia",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardDetailModalView.o",
+    "swift-dependencies" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardDetailModalView.swiftdeps"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Components/LegalLinksView.swift" : {
+    "const-values" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/LegalLinksView.swiftconstvalues",
+    "dependencies" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/LegalLinksView.d",
+    "diagnostics" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/LegalLinksView.dia",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/LegalLinksView.o",
+    "swift-dependencies" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/LegalLinksView.swiftdeps"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Components/OnboardingTutorialView.swift" : {
+    "const-values" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/OnboardingTutorialView.swiftconstvalues",
+    "dependencies" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/OnboardingTutorialView.d",
+    "diagnostics" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/OnboardingTutorialView.dia",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/OnboardingTutorialView.o",
+    "swift-dependencies" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Debug-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/OnboardingTutorialView.swiftdeps"
+  }
+}

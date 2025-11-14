@@ -143,7 +143,7 @@ struct AppConstants {
         static let yearlyCard = "Yearly\nSolar Cycle"
         static let fiftyTwoDayCycle = "52-Day\nAstral Cycle"
         static let dailyInfluence = "Today's Cycle"
-        static let yearlyInfluence = "Yearly Solar Cycle"
+        static let yearlyInfluence = "Your Yearly Spread"
         static let fiftyTwoDayInfluence = "Astral Cycle"
         static let exploring = "Exploring Cards for"
         static let missingImage = "Missing:"

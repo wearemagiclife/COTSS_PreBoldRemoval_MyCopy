@@ -48,15 +48,34 @@ struct LifeSpreadView: View {
         return repo.birthDescriptions[String(birthCard.id)] ?? "No description available."
     }
     
-    // MARK: - Page Title (Navigation)
-    private var lifeSpreadTitle: String {
-        return "Your Life Spread"
-    }
-    
     private var birthDateString: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         return formatter.string(from: dataManager.userProfile.birthDate)
+    }
+    
+    // MARK: - Page Title (Navigation)
+    private var lifeSpreadTitle: String {
+        // If a detail modal is open, personalize by what kind of card it is
+        if showCardDetail {
+            // Karma card detail
+            if isKarmaCard, let card = detailCard {
+                if karma1CardIds.contains(card.id) {
+                    return "First Karma Card"
+                } else if karma2CardIds.contains(card.id) {
+                    return "Second Karma Card"
+                } else {
+                    // Fallback if it somehow isn't in either set
+                    return "Karma Cards"
+                }
+            } else {
+                // Birth card detail
+                return "Your Birth Card"
+            }
+        }
+        
+        // Overview spread
+        return "Your Life Spread"
     }
     
     // MARK: - Karma Connections
@@ -167,7 +186,7 @@ struct LifeSpreadView: View {
                 AnyView(
                     Group {
                         if let karmaCard = firstKarmaCard {
-                            BirthCardWithKarmaShareLink(
+                            LifeSpreadShareLink(
                                 birthCard: birthCard,
                                 birthCardTitle: birthCardTitle,
                                 birthCardDescription: birthCardDescription,

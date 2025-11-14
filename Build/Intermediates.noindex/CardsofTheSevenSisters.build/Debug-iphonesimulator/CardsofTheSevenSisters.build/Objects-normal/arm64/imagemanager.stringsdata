@@ -1,0 +1,24 @@
+{
+  "source": "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/imagemanager.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Missing image: %@",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 136
+        }
+      },
+      {
+        "comment": "",
+        "key": "Missing:",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 126
+        }
+      }
+    ]
+  },
+  "version": 1
+}
