@@ -75,7 +75,7 @@ struct SettingsMenuView: View {
                                 SettingsRow(
                                     systemImage: "globe",
                                     title: "Need Support?",
-                                    subtitle: "www.sevensisters.cards/support",
+                                    subtitle: "www.wearemagic.life/support",
                                     cardBackground: cardBackground
                                 )
                             }
