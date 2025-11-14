@@ -1,8 +1,10 @@
 import SwiftUI
 
 @main
-struct CardsOfDestinyApp: App {
+struct CardsOfTheSevenSisters: App {
     @State private var showSplash = true
+    @StateObject private var authManager = AuthenticationManager.shared
+    @StateObject private var dataManager = DataManager.shared
     
     init() {
         setupGlobalAppearance()
@@ -11,7 +13,7 @@ struct CardsOfDestinyApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                Color(red: 0.86, green: 0.77, blue: 0.57)
+                AppTheme.backgroundColor
                     .ignoresSafeArea(.all)
                 
                 if showSplash {
@@ -25,7 +27,13 @@ struct CardsOfDestinyApp: App {
                     HomeView()
                         .preferredColorScheme(.light)
                         .transition(.opacity)
+                        .environmentObject(authManager)
+                        .environmentObject(dataManager)
                 }
+            }
+            .onAppear {
+                // Check authentication status on app launch
+                authManager.checkExistingAuthentication()
             }
         }
     }

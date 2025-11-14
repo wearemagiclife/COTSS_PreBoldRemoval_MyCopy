@@ -1,7 +1,9 @@
 import SwiftUI
+import AuthenticationServices
 
 struct ProfileSheet: View {
     @StateObject private var dataManager = DataManager.shared
+    @StateObject private var authManager = AuthenticationManager.shared
     @Environment(\.presentationMode) var presentationMode
     @State private var name: String = ""
     @State private var birthDate = Date()
@@ -9,6 +11,7 @@ struct ProfileSheet: View {
     @State private var errorMessage = ""
     @State private var showDatePicker: Bool = true
     @State private var isSaving = false
+    @State private var showingSignOutAlert = false
     
     private let fieldBackgroundColor = Color(red: 0.95, green: 0.90, blue: 0.78)
     
@@ -37,22 +40,61 @@ struct ProfileSheet: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(red: 0.91, green: 0.82, blue: 0.63)
+                AppTheme.backgroundColor
                     .ignoresSafeArea()
                 
                 ScrollView {
                     VStack(spacing: 30) {
+                        // Apple ID Info Section (if signed in)
+                        if authManager.isSignedIn && (!authManager.userEmail.isEmpty || !authManager.userName.isEmpty) {
+                            VStack(alignment: .leading, spacing: 15) {
+                                Text("Apple ID")
+                                    .font(.custom("Iowan Old Style", size: 22))
+                                    .foregroundColor(AppTheme.primaryText)
+                                
+                                VStack(alignment: .leading, spacing: 10) {
+                                    if !authManager.userName.isEmpty {
+                                        HStack {
+                                            Image(systemName: "person.fill")
+                                                .foregroundColor(AppTheme.secondaryText)
+                                            Text(authManager.userName)
+                                                .font(.custom("Iowan Old Style", size: 16))
+                                                .foregroundColor(AppTheme.primaryText)
+                                        }
+                                    }
+                                    if !authManager.userEmail.isEmpty {
+                                        HStack {
+                                            Image(systemName: "envelope.fill")
+                                                .foregroundColor(AppTheme.secondaryText)
+                                            Text(authManager.userEmail)
+                                                .font(.custom("Iowan Old Style", size: 16))
+                                                .foregroundColor(AppTheme.primaryText)
+                                        }
+                                    }
+                                }
+                                .padding()
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(fieldBackgroundColor)
+                                )
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.black.opacity(0.1), lineWidth: 1)
+                                )
+                            }
+                            .padding(.horizontal)
+                            .padding(.top, 20)
+                        }
+                        
                         VStack(alignment: .center, spacing: 10) {
                             Text("Profile Name")
                                 .font(.custom("Iowan Old Style", size: 22))
-                                
-                                
-                                .foregroundColor(.black)
-                                .padding(.top, 20)
+                                .foregroundColor(AppTheme.primaryText)
+                                .padding(.top, authManager.isSignedIn ? 0 : 20)
                             
                             TextField("Enter your name", text: $name)
                                 .font(.custom("Iowan Old Style", size: 20))
-                                
                                 .padding()
                                 .background(
                                     RoundedRectangle(cornerRadius: 10)
@@ -69,14 +111,11 @@ struct ProfileSheet: View {
                         VStack(spacing: 15) {
                             Text("Birth Date")
                                 .font(.custom("Iowan Old Style", size: 22))
-                                
-                                
-                                .foregroundColor(.black)
+                                .foregroundColor(AppTheme.primaryText)
                             
                             Text(formattedDate)
                                 .font(.custom("Iowan Old Style", size: 20))
-                                
-                                .foregroundColor(.black)
+                                .foregroundColor(AppTheme.primaryText)
                                 .padding()
                                 .frame(maxWidth: .infinity)
                                 .background(
@@ -112,7 +151,6 @@ struct ProfileSheet: View {
                                 }
                                 Text(isSaving ? "Saving..." : "Save Changes")
                                     .font(.custom("Iowan Old Style", size: 19))
-                                    
                                     .tracking(0.5)
                                     .foregroundColor(.white)
                             }
@@ -126,13 +164,12 @@ struct ProfileSheet: View {
                         .accessibilityLabel("Save Changes")
                         .accessibilityHint("Saves profile information and closes the sheet")
                         .padding(.horizontal)
+                        .cardShadow(isLarge: true)
                         
                         VStack(alignment: .leading, spacing: 15) {
                             Text("Legal")
                                 .font(.custom("Iowan Old Style", size: 22))
-                                
-                                
-                                .foregroundColor(.black)
+                                .foregroundColor(AppTheme.primaryText)
                             
                             Button(action: {
                                 if let url = URL(string: "https://wearemagic.life/privacy-policy") {
@@ -142,10 +179,10 @@ struct ProfileSheet: View {
                                 HStack {
                                     Text("Privacy Policy")
                                         .font(.custom("Iowan Old Style", size: 18))
-                                        .foregroundColor(.black)
+                                        .foregroundColor(AppTheme.primaryText)
                                     Spacer()
                                     Image(systemName: "arrow.up.right")
-                                        .foregroundColor(.black)
+                                        .foregroundColor(AppTheme.primaryText)
                                 }
                                 .padding()
                                 .background(fieldBackgroundColor)
@@ -162,10 +199,10 @@ struct ProfileSheet: View {
                                 HStack {
                                     Text("Terms of Service")
                                         .font(.custom("Iowan Old Style", size: 18))
-                                        .foregroundColor(.black)
+                                        .foregroundColor(AppTheme.primaryText)
                                     Spacer()
                                     Image(systemName: "arrow.up.right")
-                                        .foregroundColor(.black)
+                                        .foregroundColor(AppTheme.primaryText)
                                 }
                                 .padding()
                                 .background(fieldBackgroundColor)
@@ -175,7 +212,29 @@ struct ProfileSheet: View {
                             .accessibilityHint("Opens terms of service in web browser")
                         }
                         .padding(.horizontal)
-                        .padding(.bottom, 30)
+                        
+                        // Sign Out Button
+                        if authManager.isSignedIn {
+                            Button {
+                                showingSignOutAlert = true
+                            } label: {
+                                Text("Sign Out")
+                                    .font(.custom("Iowan Old Style", size: 18))
+                                    .foregroundColor(.red)
+                                    .padding(.horizontal, 50)
+                                    .padding(.vertical, 12)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(fieldBackgroundColor)
+                                    )
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.red.opacity(0.3), lineWidth: 1)
+                                    )
+                            }
+                            .padding(.top, 10)
+                            .padding(.bottom, 30)
+                        }
                     }
                     .padding()
                 }
@@ -186,7 +245,7 @@ struct ProfileSheet: View {
                 } label: {
                     Image(systemName: "xmark")
                         .font(.title2)
-                        .foregroundColor(.black)
+                        .foregroundColor(AppTheme.primaryText)
                 }
                 .accessibilityLabel("Close")
                 .accessibilityHint("Saves changes and closes profile")
@@ -199,6 +258,15 @@ struct ProfileSheet: View {
                 Button("OK") { }
             } message: {
                 Text(errorMessage)
+            }
+            .alert("Sign Out", isPresented: $showingSignOutAlert) {
+                Button("Cancel", role: .cancel) { }
+                Button("Sign Out", role: .destructive) {
+                    authManager.signOut()
+                    presentationMode.wrappedValue.dismiss()
+                }
+            } message: {
+                Text("Are you sure you want to sign out? You'll need to sign in again to access your cards.")
             }
         }
     }

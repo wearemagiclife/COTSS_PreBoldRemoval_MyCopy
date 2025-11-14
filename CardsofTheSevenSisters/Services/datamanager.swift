@@ -248,6 +248,19 @@ class DataManager: ObservableObject {
     var isProfileComplete: Bool {
         !userProfile.name.isEmpty
     }
+    
+    // Clear Profile Extension for Sign Out
+    func clearProfile() {
+        // Reset profile to default
+        userProfile = UserProfile()
+        isDailyCardRevealed = false
+        explorationDate = nil
+        
+        // Clear any saved profile data
+        UserDefaults.standard.removeObject(forKey: "userProfile")
+        UserDefaults.standard.removeObject(forKey: "dailyCardRevealDate")
+        UserDefaults.standard.removeObject(forKey: "isDailyCardRevealed")
+    }
 }
 
 // MARK: - Planetary Period Data Models

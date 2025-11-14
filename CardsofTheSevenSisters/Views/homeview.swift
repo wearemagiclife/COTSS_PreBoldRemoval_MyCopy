@@ -1,4 +1,5 @@
 import SwiftUI
+import AuthenticationServices
 
 struct HomeView: View {
     @StateObject private var dataManager: DataManager = DataManager.shared
@@ -123,16 +124,18 @@ struct HomeView: View {
 
 struct ProfileSetupBlockingView: View {
     @StateObject private var dataManager: DataManager = DataManager.shared
-    @State private var showingProfileSheet = true
+    @StateObject private var authManager: AuthenticationManager = AuthenticationManager.shared
+    @State private var showingProfileSheet = false
     
     var body: some View {
         ZStack {
-            Color(red: 0.91, green: 0.82, blue: 0.63)
+            AppTheme.backgroundColor
                 .ignoresSafeArea()
             
             VStack(spacing: AppConstants.Spacing.sectionSpacing) {
                 Spacer()
                 
+                // App Title/Logo
                 Group {
                     if let titleImage = UIImage(named: "apptitle") {
                         Image(uiImage: titleImage)
@@ -148,34 +151,72 @@ struct ProfileSetupBlockingView: View {
                                 .font(.custom("Iowan Old Style", size: AppConstants.FontSizes.extraLarge + 2))
                                 .tracking(1)
                         }
-                        .foregroundColor(.black)
+                        .foregroundColor(AppTheme.primaryText)
                         .multilineTextAlignment(.center)
                     }
                 }
                 
-                VStack(spacing: AppConstants.Spacing.medium) {
-                    Text("Welcome to Cards of Destiny!")
-                        .font(.custom("Iowan Old Style", size: AppConstants.FontSizes.headline + 2))
-                        .foregroundColor(.black)
+                // Show different content based on sign-in status
+                if !authManager.isSignedIn {
+                    // Not signed in - show Sign in with Apple
+                    VStack(spacing: AppConstants.Spacing.medium) {
+                        Text("Cardology for Self-Discovery")
+                            .font(.custom("Iowan Old Style", size: AppConstants.FontSizes.headline + 2))
+                            .foregroundColor(AppTheme.primaryText)
+                            .multilineTextAlignment(.center)
+                        
+                        Text("To begin your journey please sign in.")
+                            .font(.custom("Iowan Old Style", size: AppConstants.FontSizes.callout + 2))
+                            .foregroundColor(AppTheme.primaryText)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, AppConstants.Spacing.medium)
+                        
+                        SignInWithAppleButton(.signIn) { request in
+                            request.requestedScopes = [.fullName, .email]
+                        } onCompletion: { result in
+                            authManager.handleAuthorization(result)
+                        }
+                        .signInWithAppleButtonStyle(.black)
+                        .frame(height: 50)
+                        .frame(maxWidth: 280)
+                        .cornerRadius(AppConstants.CornerRadius.button)
+                        .cardShadow(isLarge: true)
+                    }
+                } else {
+                    // Signed in but profile not complete - show profile setup
+                    VStack(spacing: AppConstants.Spacing.medium) {
+                        Text("Welcome back!")
+                            .font(.custom("Iowan Old Style", size: AppConstants.FontSizes.headline + 2))
+                            .foregroundColor(AppTheme.primaryText)
+                            .multilineTextAlignment(.center)
+                        
+                        if !authManager.userName.isEmpty {
+                            Text("Hello, \(authManager.userName)")
+                                .font(.custom("Iowan Old Style", size: AppConstants.FontSizes.body))
+                                .foregroundColor(AppTheme.secondaryText)
+                                .multilineTextAlignment(.center)
+                        }
+                        
+                        Text("To reveal your personalized cards, please set up your profile.")
+                            .font(.custom("Iowan Old Style", size: AppConstants.FontSizes.callout + 2))
+                            .foregroundColor(AppTheme.primaryText)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, AppConstants.Spacing.medium)
+                        
+                        Button("Set Up Your Profile") {
+                            showingProfileSheet = true
+                        }
+                        .font(.custom("Iowan Old Style", size: AppConstants.FontSizes.subheadline))
+                        .tracking(0.5)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 50)
+                        .padding(.vertical, AppConstants.Spacing.medium)
+                        .background(AppTheme.darkAccent.opacity(0.7))
+                        .cornerRadius(AppConstants.CornerRadius.button)
                         .multilineTextAlignment(.center)
-                    
-                    Text("To reveal your personalized cards and begin your mystical journey, please set up your profile first.")
-                        .font(.custom("Iowan Old Style", size: AppConstants.FontSizes.callout + 2))
-                        .foregroundColor(.black)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, AppConstants.Spacing.medium)
+                        .cardShadow(isLarge: true)
+                    }
                 }
-                
-                Button("Set Up Your Profile") {
-                    showingProfileSheet = true
-                }
-                .font(.custom("Iowan Old Style", size: AppConstants.FontSizes.body + 2))
-                .foregroundColor(.white)
-                .padding(.horizontal, AppConstants.Spacing.extraLarge)
-                .padding(.vertical, AppConstants.Spacing.medium)
-                .background(Color.black)
-                .cornerRadius(AppConstants.CornerRadius.button)
-                .cardShadow(isLarge: true)
                 
                 Spacer()
             }
@@ -184,7 +225,10 @@ struct ProfileSetupBlockingView: View {
             ProfileSheet()
         }
         .onAppear {
-            showingProfileSheet = true
+            // Only auto-show profile sheet if signed in
+            if authManager.isSignedIn && !dataManager.isProfileComplete {
+                showingProfileSheet = true
+            }
         }
     }
 }
