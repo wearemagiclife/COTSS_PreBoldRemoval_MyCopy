@@ -1,0 +1,80 @@
+{
+  "source": "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Views/homeview.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Settings",
+        "location": {
+          "startingColumn": 37,
+          "startingLine": 101
+        }
+      },
+      {
+        "comment": "",
+        "key": "Opens settings menu",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 102
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@, %@",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 111
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cardology for Self-Discovery",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 204
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sign in to start your  journey",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 214
+        }
+      },
+      {
+        "comment": "",
+        "key": "CARDS OF THE",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 290
+        }
+      },
+      {
+        "comment": "",
+        "key": "SEVEN SISTERS",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 296
+        }
+      },
+      {
+        "comment": "",
+        "key": "Card Image\nNot Found",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 335
+        }
+      },
+      {
+        "comment": "",
+        "key": "Card Back\nNot Found",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 355
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,161 @@
+{
+  "" : {
+    "const-values" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardsofTheSevenSisters-primary.swiftconstvalues",
+    "dependencies" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardsofTheSevenSisters-primary.d",
+    "diagnostics" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardsofTheSevenSisters-primary.dia",
+    "emit-module-dependencies" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardsofTheSevenSisters-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardsofTheSevenSisters-primary-emit-module.dia",
+    "pch" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardsofTheSevenSisters-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardsofTheSevenSisters-primary.swiftdeps"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/CardsofTheSevenSisters.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardsofTheSevenSisters.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardsofTheSevenSisters.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardsofTheSevenSisters.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Components/CardDetailModalView.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardDetailModalView.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardDetailModalView.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/CardDetailModalView.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Components/LearnView.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/LearnView.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/LearnView.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/LearnView.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Components/LegalLinksView.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/LegalLinksView.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/LegalLinksView.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/LegalLinksView.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Components/NotificationSettingsView.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/NotificationSettingsView.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/NotificationSettingsView.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/NotificationSettingsView.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Components/OnboardingTutorialView.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/OnboardingTutorialView.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/OnboardingTutorialView.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/OnboardingTutorialView.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Components/SettingsMenuView.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/SettingsMenuView.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/SettingsMenuView.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/SettingsMenuView.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Components/playingcardview.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/playingcardview.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/playingcardview.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/playingcardview.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Components/profilesheet.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/profilesheet.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/profilesheet.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/profilesheet.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Models/card.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/card.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/card.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/card.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Services/DescriptionRepository.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/DescriptionRepository.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/DescriptionRepository.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/DescriptionRepository.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Services/NotificationManager.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/NotificationManager.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/NotificationManager.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/NotificationManager.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Services/ShareCardContent.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/ShareCardContent.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/ShareCardContent.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/ShareCardContent.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Services/authenticationmanager.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/authenticationmanager.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/authenticationmanager.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/authenticationmanager.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Services/birthcardlookup.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/birthcardlookup.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/birthcardlookup.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/birthcardlookup.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Services/cardcalculationservice.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/cardcalculationservice.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/cardcalculationservice.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/cardcalculationservice.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Services/datamanager.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/datamanager.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/datamanager.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/datamanager.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Views/dailycardview.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/dailycardview.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/dailycardview.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/dailycardview.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Views/fiftytwodaycycleview.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/fiftytwodaycycleview.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/fiftytwodaycycleview.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/fiftytwodaycycleview.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Views/homeview.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/homeview.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/homeview.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/homeview.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Views/lifespreadview.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/lifespreadview.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/lifespreadview.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/lifespreadview.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Views/vintagesplashview.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/vintagesplashview.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/vintagesplashview.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/vintagesplashview.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/Views/yearlyspreadview.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/yearlyspreadview.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/yearlyspreadview.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/yearlyspreadview.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/appconstants.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/appconstants.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/appconstants.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/appconstants.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/apptheme.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/apptheme.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/apptheme.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/apptheme.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/cardcomponents.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/cardcomponents.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/cardcomponents.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/cardcomponents.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/imagemanager.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/imagemanager.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/imagemanager.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/imagemanager.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/viewmodels.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/viewmodels.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/viewmodels.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/viewmodels.o"
+  },
+  "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/CardsofTheSevenSisters/viewmodifiers.swift" : {
+    "index-unit-output-path" : "/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/viewmodifiers.o",
+    "llvm-bc" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/viewmodifiers.bc",
+    "object" : "/Users/impriints/Downloads/COTSS_PreBoldRemoval_MyCopy/Build/Intermediates.noindex/CardsofTheSevenSisters.build/Release-iphonesimulator/CardsofTheSevenSisters.build/Objects-normal/arm64/viewmodifiers.o"
+  }
+}

@@ -75,7 +75,7 @@ struct SettingsMenuView: View {
                                 SettingsRow(
                                     systemImage: "globe",
                                     title: "Need Support?",
-                                    subtitle: "www.wearemagic.life/support",
+                                    subtitle: "We're here to help",
                                     cardBackground: cardBackground
                                 )
                             }
@@ -123,7 +123,7 @@ struct SettingsMenuView: View {
     }
     
     private func openWebsite() {
-        if let url = URL(string: "https://wearemagic.life") {
+        if let url = URL(string: "https://www.wearemagic.life/support") {
             UIApplication.shared.open(url)
         }
     }
