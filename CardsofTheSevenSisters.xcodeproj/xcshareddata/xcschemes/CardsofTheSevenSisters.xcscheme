@@ -52,6 +52,17 @@
                ReferencedContainer = "container:CardsofTheSevenSisters.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "64DC31042ECA073E00509BB3"
+               BuildableName = "CardsofTheSevenSistersUITests.xctest"
+               BlueprintName = "CardsofTheSevenSistersUITests"
+               ReferencedContainer = "container:CardsofTheSevenSisters.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

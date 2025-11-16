@@ -6,7 +6,58 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		64DC31142ECA07E900509BB3 /* _Testing_Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DC31132ECA07E900509BB3 /* _Testing_Foundation.framework */; };
+		64DC31152ECA07E900509BB3 /* _Testing_Foundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64DC31132ECA07E900509BB3 /* _Testing_Foundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		64DC31112ECA074700509BB3 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		64DC31122ECA079C00509BB3 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXContainerItemProxy section */
+		64DC310B2ECA073E00509BB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0061DA22DE2DE1300644B93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0061DA92DE2DE1300644B93;
+			remoteInfo = CardsofTheSevenSisters;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		64DC31162ECA07E900509BB3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				64DC31152ECA07E900509BB3 /* _Testing_Foundation.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D03B892B2E965ED4008142F6 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -20,13 +71,33 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		64DC31052ECA073E00509BB3 /* CardsofTheSevenSistersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsofTheSevenSistersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64DC31132ECA07E900509BB3 /* _Testing_Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = _Testing_Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/_Testing_Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D0061DAA2DE2DE1300644B93 /* CardsofTheSevenSisters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardsofTheSevenSisters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03B891B2E965ED4008142F6 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		64DC31002EC9FFF800509BB3 /* Exceptions for "CardsofTheSevenSisters" folder in "CardsofTheSevenSisters" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = D0061DA92DE2DE1300644B93 /* CardsofTheSevenSisters */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		64DC31062ECA073E00509BB3 /* CardsofTheSevenSistersUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CardsofTheSevenSistersUITests;
+			sourceTree = "<group>";
+		};
 		D0061DAC2DE2DE1300644B93 /* CardsofTheSevenSisters */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				64DC31002EC9FFF800509BB3 /* Exceptions for "CardsofTheSevenSisters" folder in "CardsofTheSevenSisters" target */,
+			);
 			path = CardsofTheSevenSisters;
 			sourceTree = "<group>";
 		};
@@ -38,6 +109,14 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		64DC31022ECA073E00509BB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64DC31142ECA07E900509BB3 /* _Testing_Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0061DA72DE2DE1300644B93 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,6 +132,7 @@
 			children = (
 				D0061DAC2DE2DE1300644B93 /* CardsofTheSevenSisters */,
 				D03B891D2E965ED4008142F6 /* Cards of The Seven Sisters */,
+				64DC31062ECA073E00509BB3 /* CardsofTheSevenSistersUITests */,
 				D03B891A2E965ED4008142F6 /* Frameworks */,
 				D0061DAB2DE2DE1300644B93 /* Products */,
 			);
@@ -62,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				D0061DAA2DE2DE1300644B93 /* CardsofTheSevenSisters.app */,
+				64DC31052ECA073E00509BB3 /* CardsofTheSevenSistersUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +150,7 @@
 		D03B891A2E965ED4008142F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				64DC31132ECA07E900509BB3 /* _Testing_Foundation.framework */,
 				D03B891B2E965ED4008142F6 /* AuthenticationServices.framework */,
 			);
 			name = Frameworks;
@@ -77,6 +159,32 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		64DC31042ECA073E00509BB3 /* CardsofTheSevenSistersUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64DC310D2ECA073E00509BB3 /* Build configuration list for PBXNativeTarget "CardsofTheSevenSistersUITests" */;
+			buildPhases = (
+				64DC31012ECA073E00509BB3 /* Sources */,
+				64DC31022ECA073E00509BB3 /* Frameworks */,
+				64DC31032ECA073E00509BB3 /* Resources */,
+				64DC31162ECA07E900509BB3 /* Embed Frameworks */,
+			);
+			buildRules = (
+				64DC31122ECA079C00509BB3 /* PBXBuildRule */,
+				64DC31112ECA074700509BB3 /* PBXBuildRule */,
+			);
+			dependencies = (
+				64DC310C2ECA073E00509BB3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				64DC31062ECA073E00509BB3 /* CardsofTheSevenSistersUITests */,
+			);
+			name = CardsofTheSevenSistersUITests;
+			packageProductDependencies = (
+			);
+			productName = CardsofTheSevenSistersUITests;
+			productReference = 64DC31052ECA073E00509BB3 /* CardsofTheSevenSistersUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		D0061DA92DE2DE1300644B93 /* CardsofTheSevenSisters */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0061DB82DE2DE1500644B93 /* Build configuration list for PBXNativeTarget "CardsofTheSevenSisters" */;
@@ -107,9 +215,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1640;
+				LastSwiftUpdateCheck = 2610;
 				LastUpgradeCheck = 2610;
 				TargetAttributes = {
+					64DC31042ECA073E00509BB3 = {
+						CreatedOnToolsVersion = 26.1.1;
+						TestTargetID = D0061DA92DE2DE1300644B93;
+					};
 					D0061DA92DE2DE1300644B93 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -130,11 +242,19 @@
 			projectRoot = "";
 			targets = (
 				D0061DA92DE2DE1300644B93 /* CardsofTheSevenSisters */,
+				64DC31042ECA073E00509BB3 /* CardsofTheSevenSistersUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		64DC31032ECA073E00509BB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0061DA82DE2DE1300644B93 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +265,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		64DC31012ECA073E00509BB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0061DA62DE2DE1300644B93 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -154,7 +281,63 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		64DC310C2ECA073E00509BB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0061DA92DE2DE1300644B93 /* CardsofTheSevenSisters */;
+			targetProxy = 64DC310B2ECA073E00509BB3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		64DC310E2ECA073E00509BB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N6R87NMS8K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = wearemagiclife.CardsofTheSevenSistersUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CardsofTheSevenSisters;
+			};
+			name = Debug;
+		};
+		64DC310F2ECA073E00509BB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N6R87NMS8K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = wearemagiclife.CardsofTheSevenSistersUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CardsofTheSevenSisters;
+			};
+			name = Release;
+		};
 		D0061DB62DE2DE1500644B93 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -306,6 +489,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.CardsOfTheSevenSistersApp.CardsOfTheSevenSisters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -340,6 +527,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.CardsOfTheSevenSistersApp.CardsOfTheSevenSisters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -349,6 +540,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		64DC310D2ECA073E00509BB3 /* Build configuration list for PBXNativeTarget "CardsofTheSevenSistersUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64DC310E2ECA073E00509BB3 /* Debug */,
+				64DC310F2ECA073E00509BB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D0061DA52DE2DE1300644B93 /* Build configuration list for PBXProject "CardsofTheSevenSisters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -19,34 +19,39 @@ struct LegalLinksView: View {
                         .font(.custom("Iowan Old Style", size: 16))
                         .foregroundColor(AppTheme.secondaryText)
                         .padding(.bottom, 12)
-                    
-                    LegalSectionCard(
+
+                    LegalLinkCard(
                         title: "Privacy Policy",
                         subtitle: "We take your Right to Privacy seriously.",
+                        url: "https://www.wearemagic.life/privacy-policy",
                         cardBackground: cardBackground
                     )
                     
-                    LegalSectionCard(
+                    LegalLinkCard(
                         title: "Terms of Service",
                         subtitle: "Clear terms for a better future",
+                        url: "https://www.wearemagic.life/terms-of-service",
                         cardBackground: cardBackground
                     )
                     
-                    LegalSectionCard(
+                    LegalLinkCard(
                         title: "Copyright & Licensing",
                         subtitle: "Setting healthy boundaries for our art",
+                        url: "https://www.wearemagic.life/copyright-licensing",
                         cardBackground: cardBackground
                     )
                     
-                    LegalSectionCard(
+                    LegalLinkCard(
                         title: "Data Deletion Policy",
                         subtitle: "Just say the word",
+                        url: "https://www.wearemagic.life/data-deletion-policy",
                         cardBackground: cardBackground
                     )
                     
-                    LegalSectionCard(
+                    LegalLinkCard(
                         title: "EULA",
                         subtitle: "Apple's End User Licensing Agreement",
+                        url: "https://www.wearemagic.life/eula",
                         cardBackground: cardBackground
                     )
                     
@@ -89,3 +94,27 @@ private struct LegalSectionCard: View {
         )
     }
 }
+
+private struct LegalLinkCard: View {
+    let title: String
+    let subtitle: String
+    let url: String
+    let cardBackground: Color
+
+    var body: some View {
+        Button(action: openURL) {
+            LegalSectionCard(
+                title: title,
+                subtitle: subtitle,
+                cardBackground: cardBackground
+            )
+        }
+        .buttonStyle(.plain) // Prevents blue highlight or button styling
+    }
+
+    private func openURL() {
+        guard let link = URL(string: url) else { return }
+        UIApplication.shared.open(link)
+    }
+}
+
