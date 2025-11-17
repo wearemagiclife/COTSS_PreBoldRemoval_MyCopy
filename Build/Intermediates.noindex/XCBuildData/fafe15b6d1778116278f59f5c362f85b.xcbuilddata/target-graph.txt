@@ -1,2 +1,0 @@
-Target dependency graph (1 target)
-Target 'CardsofTheSevenSisters' in project 'CardsofTheSevenSisters' (no dependencies)

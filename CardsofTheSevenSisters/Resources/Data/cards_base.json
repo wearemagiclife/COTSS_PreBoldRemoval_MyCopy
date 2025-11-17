@@ -5,7 +5,7 @@
       "name": "ACE OF HEARTS",
       "value": "A",
       "suit": "hearts",
-      "title": "The Instinctual Creator"
+      "title": "The Art of Presence"
     },
     {
       "id": 2,
@@ -19,7 +19,7 @@
       "name": "THREE OF HEARTS",
       "value": "3",
       "suit": "hearts",
-      "title": "The Weaver of Serendipity"
+      "title": "The Weaver of Circumstance"
     },
     {
       "id": 4,
@@ -124,7 +124,7 @@
       "name": "FIVE OF CLUBS",
       "value": "5",
       "suit": "clubs",
-      "title": "The Refiner of Reality"
+      "title": "The Peregrine & Pilgrim"
     },
     {
       "id": 19,
@@ -187,7 +187,7 @@
       "name": "ACE OF DIAMONDS",
       "value": "A",
       "suit": "diamonds",
-      "title": "The Initiator of Clarity"
+      "title": "The Quest for Clarity"
     },
     {
       "id": 28,
@@ -229,7 +229,7 @@
       "name": "SEVEN OF DIAMONDS",
       "value": "7",
       "suit": "diamonds",
-      "title": "The Bridge Between Intellect and Intuition"
+      "title": "The Meeting of Intellect and Intuition"
     },
     {
       "id": 34,
@@ -285,7 +285,7 @@
       "name": "TWO OF SPADES",
       "value": "2",
       "suit": "spades",
-      "title": "The Initiator of Collaboration"
+      "title": "The Magician"
     },
     {
       "id": 42,
@@ -348,7 +348,7 @@
       "name": "JACK OF SPADES",
       "value": "J",
       "suit": "spades",
-      "title": "The Master of Catalytic Energy"
+      "title": "Mastering Catalytic Energy"
     },
     {
       "id": 51,
